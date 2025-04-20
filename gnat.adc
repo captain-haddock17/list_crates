@@ -1,0 +1,34 @@
+-- AdaForge.Wide_Wide_Directories
+
+pragma Source_File_Name
+  (AdaForge.Wide_Wide_Directories,
+   Spec_File_Name => "a-zdirec.ads");
+
+pragma Source_File_Name
+  (AdaForge.Wide_Wide_Directories,
+   Body_File_Name => "a-zdirec.adb");
+
+-- AdaForge.Wide_Wide_Directories.Hierarchical_File_Names
+pragma Source_File_Name
+  (AdaForge.Wide_Wide_Directories.Hierarchical_File_Names,
+   Spec_File_Name => "a-zdhfna.ads");
+
+pragma Source_File_Name
+  (AdaForge.Wide_Wide_Directories.Hierarchical_File_Names,
+   Body_File_Name => "a-zdhfna.adb");
+
+-- AdaForge.Wide_Wide_Directories.Validity
+
+pragma Source_File_Name
+  (AdaForge.Wide_Wide_Directories.Validity,
+   Spec_File_Name => "a-zdival.ads");
+
+pragma Source_File_Name
+  (AdaForge.Wide_Wide_Directories.Validity,
+   Body_File_Name => "a-zdival.adb");
+
+--  pragma Source_File_Name
+--    (AdaForge.Wide_Wide_Directories.Validity,
+--     Body_File_Name => "a-zdival__mingw.adb");
+
+
