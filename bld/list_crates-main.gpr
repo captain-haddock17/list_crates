@@ -1,0 +1,25 @@
+--  --------------------------------------------------------------------------------------
+--  SPDX-License-Identifier: Apache-2.0
+--  SPDX-Creator: William J. Franck (william.franck@sterna.dev)
+--  SPDX-FileCopyrightText: Copyright 2025 STERNA MARINE s.a.s. (william.franck@sterna.dev)
+--  --------------------------------------------------------------------------------------
+--  Initial creation date : 2025-03-01
+--  -------------------------------------------------------------
+
+with "list_crates.gpr";
+with "list_crates-lib.gpr";
+with "list_crates_config.gpr";
+-- with "../../../../adalib/list_crates/bld/list_crates-lib.gpr";
+-- with "../../../../AdaLib/adafdevttest/bld/adafdevttest-lib.gpr";
+-- with "../../../../AdaLib/adafdevt/bld/adafdevt-lib.gpr";
+-- with "../../../../AdaLib/adaf/bld/adaf-lib.gpr";
+
+project list_crates.Main is
+
+   for Source_Dirs use ("../src/main/**") & OS_Sources;
+   for Object_Dir  use Build_Dir & "/obj";
+   for Exec_Dir    use Build_Dir & "/bin";
+   for Create_Missing_Dirs use "True";
+   for Main use ("list_crates.adb");
+
+end list_crates.Main;

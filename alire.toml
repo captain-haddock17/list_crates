@@ -1,0 +1,138 @@
+name = "list_crates"
+description = ""
+version = "0.1.0-dev"
+
+authors = ["William J. Franck"]
+maintainers = ["William J. Franck <william@sterna.dev>"]
+maintainers-logins = ["haddock17"]
+licenses = "Apache-2.0 WITH LLVM-exception"
+website = "www.gitlab.com"
+tags = ["alire", "toml", "export", "repository"]
+
+executables = ["list_crates"]
+
+[[depends-on]]
+# adaf = "*"
+semantic_versioning = "^3.0"
+# adactextcharunic = "*"
+# adafcrypmurmhash3 = "*"
+# adafcrypuuid = "*"
+# adafdevttestunit = "*"
+# adafframaop = "*"
+# adaftextustr = "*"
+# adafutiloptl = "*"
+
+[[pins]]
+# adaf =  { path='../../ANTLR/AdaLib/adaf' }
+semantic_versioning =  { path='../../ALIRE/alire.git/deps/semantic_versioning' }
+
+# adactextcharunic = { path='../../AdaLib/adactextcharunic' }
+# adafcrypmurmhash3 = { path='../../AdaLib/adafcrypmurmhash3' }
+# adafcrypuuid = { path='../../AdaLib/adafcrypuuid' }
+# adafdevttestunit = { path='../../AdaLib/adafdevttestunit' }
+# adafframaop = { path='../../AdaLib/adafframaop' }
+# adaftextustr = { path='../../AdaLib/adaftextustr' }
+# adafutiloptl = { path='../../AdaLib/adafutiloptl' }
+
+[configuration.variables]
+Trace_Level = {type = "Enum", values = ["Info", "Details", "Debug"], default = "Info"}
+
+[configuration]
+auto_gpr_with = false
+output_dir = "./bld"
+
+# [build-profiles]
+# antlr4_runtime = "Validation"
+
+[build-switches]
+"*".Ada_Version = "Ada2022"
+# "*".Ada_Version = "GNAT_Extensions"
+"*".Runtime_Checks = "Everything" 
+"*".Contracts = "Yes" 
+
+Development.Optimization =  "Debug" 
+Development.Debug_Info = "Yes" 
+# Development.Runtime_Checks = "Everything" 
+Development.Compile_Checks =  "Warnings"  
+# Development.Contracts = "Yes" 
+Development.style_checks = [
+      "-gnat2022",
+      "-gnatyB",   # Check Boolean operators
+      "-gnaty-d",  # Disable check no DOS line terminators present
+      "-gnatye",   # Check end/exit labels
+      "-gnatyf",   # No form feeds or vertical tabs
+      "-gnatyI",   # check mode IN keywords
+      "-gnatyM132",# Check maximum line length
+      "-gnatyO",   # Check that overriding subprograms are explicitly marked as such
+      "-gnatyS",   # Check no statements after THEN/ELSE
+      "-gnatyx",   # Check extra parentheses
+      "-gnatyC",
+      "-gnaty-l",
+      "-gnaty-t",
+      "-gnatwI"   # Disable warnings on withed internal GNAT unit
+]
+
+Validation.Optimization = "Performance" 
+Validation.Debug_Info = "Yes" 
+# Validation.Runtime_Checks = "Everything" 
+Validation.Compile_Checks = "Errors"
+# Validation.Contracts = "Yes" 
+Validation.Style_Checks = [
+      "-gnaty3",   # Specify indentation level of 3
+      "-gnatya",   # Check attribute casing
+      "-gnatyA",   # Use of array index numbers in array attributes
+      "-gnatyB",   # Check Boolean operators
+      "-gnatyb",   # Blanks not allowed at statement end
+      "-gnatyC",   # Check comments
+      "-gnaty-d",  # Disable check no DOS line terminators present
+#     "-gnatyD",   # Check declared identifiers in mixed case
+      "-gnatye",   # Check end/exit labels
+      "-gnatyf",   # No form feeds or vertical tabs
+      "-gnatyh",   # No horizontal tabs
+      "-gnatyi",   # Check if-then layout
+      "-gnatyI",   # check mode IN keywords
+      "-gnatyk",   # Check keyword casing
+      "-gnatyl",   # Check layout
+      "-gnatyM132",# Check maximum line length
+      "-gnatyn",   # Check casing of entities in Standard
+      "-gnatyO",   # Check that overriding subprograms are explicitly marked as such
+      "-gnatyp",   # Check pragma casing
+      "-gnatyr",   # Check identifier references casing
+      "-gnatyS",   # Check no statements after THEN/ELSE
+      "-gnatyt",   # Check token spacing
+      "-gnatyu",   # Check unnecessary blank lines
+      "-gnatyx",   # Check extra parentheses
+      "-gnatwI"    # Disable warnings on withed internal GNAT unit
+]
+Release.Optimization = "Performance" 
+Release.Debug_Info = "No" 
+# Release.Runtime_Checks = "Everything" 
+Release.Compile_Checks = "Errors"  
+# Release.Contracts = "Yes" 
+Release.Style_Checks = [
+      "-gnaty3",   # Specify indentation level of 3
+      "-gnatya",   # Check attribute casing
+      "-gnatyA",   # Use of array index numbers in array attributes
+      "-gnatyB",   # Check Boolean operators
+      "-gnatyb",   # Blanks not allowed at statement end
+      "-gnatyC",   # Check comments
+      "-gnaty-d",  # Disable check no DOS line terminators present
+#     "-gnatyD",   # Check declared identifiers in mixed case
+      "-gnatye",   # Check end/exit labels
+      "-gnatyf",   # No form feeds or vertical tabs
+      "-gnatyh",   # No horizontal tabs
+      "-gnatyi",   # Check if-then layout
+      "-gnatyI",   # check mode IN keywords
+      "-gnatyk",   # Check keyword casing
+      "-gnatyl",   # Check layout
+      "-gnatyM132",# Check maximum line length
+      "-gnatyn",   # Check casing of entities in Standard
+      "-gnatyO",   # Check that overriding subprograms are explicitly marked as such
+      "-gnatyp",   # Check pragma casing
+      "-gnatyr",   # Check identifier references casing
+      "-gnatyS",   # Check no statements after THEN/ELSE
+      "-gnatyt",   # Check token spacing
+      "-gnatyu",   # Check unnecessary blank lines
+      "-gnatyx",   # Check extra parentheses
+      "-gnatwI"    # Disable warnings on withed internal GNAT unit
+]

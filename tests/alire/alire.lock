@@ -1,0 +1,60 @@
+# THIS FILE IS GENERATED. DO NOT EDIT.
+
+[solution]
+[solution.context]
+solved = true
+[[solution.state]]
+crate = "adaf"
+fulfilment = "linked"
+pinned = false
+transitivity = "direct"
+versions = "^1.0.0"
+[solution.state.link]
+lockfiled = true
+path = "../../../ANTLR/AdaLib/Adaf"
+[[solution.state]]
+crate = "adafdevt"
+fulfilment = "linked"
+pinned = false
+transitivity = "direct"
+versions = "^1.0.0"
+[solution.state.link]
+lockfiled = true
+path = "../../../ANTLR/AdaLib/AdafDevt"
+[[solution.state]]
+crate = "adafdevttest"
+fulfilment = "linked"
+pinned = false
+transitivity = "direct"
+versions = "^1.0.0"
+[solution.state.link]
+lockfiled = true
+path = "../../../ANTLR/AdaLib/AdafDevtTest"
+[[solution.state]]
+crate = "adafdevttestunit"
+fulfilment = "linked"
+pinned = false
+transitivity = "direct"
+versions = "*"
+[solution.state.link]
+lockfiled = true
+path = "../../../ANTLR/AdaLib/adafdevttestunit"
+[[solution.state]]
+crate = "list_crates"
+fulfilment = "linked"
+pinned = false
+transitivity = "direct"
+versions = "*"
+[solution.state.link]
+lockfiled = true
+path = ".."
+[[solution.state]]
+crate = "semantic_versioning"
+fulfilment = "linked"
+pinned = false
+transitivity = "direct"
+versions = "^3.0.0"
+[solution.state.link]
+lockfiled = true
+path = "../../alire.git/deps/semantic_versioning"
+

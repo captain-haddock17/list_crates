@@ -1,0 +1,43 @@
+--  --------------------------------------------------------------------------------------
+--  SPDX-License-Identifier: Apache-2.0
+--  SPDX-Creator: William J. Franck (william.franck@sterna.dev)
+--  SPDX-FileCopyrightText: Copyright 2025 STERNA MARINE s.a.s. (william.franck@sterna.dev)
+--  --------------------------------------------------------------------------------------
+--  Initial creation date : 2025-03-01
+--  -------------------------------------------------------------
+
+with "list_crates_config.gpr";
+
+abstract project list_crates is
+
+   --  Machine_Target :=  list_crates_config.Alire_Host_Arch & "_" & list_crates_config.Alire_Host_OS;
+   Machine_Target :=  external ("CPUTYPE", "x86_64") & "_" & external ("OSTYPE", "os");
+   Build_Profile : list_crates_config.Build_Profile_Kind := external ("PROFILE", list_crates_config.Build_Profile);
+   Build_Root := "../build";
+   Build_Dir :=  Build_Root & "/" & Machine_Target & "/" & Build_Profile;
+
+
+   type OS_Kind is ("windows", "unix", "macos");
+   OS : OS_Kind := External ("UnitTest_OS", "unix");
+
+   OS_Sources := "";
+   case list_crates_Config.Alire_Host_OS is
+      when "windows" =>
+         OS_Sources := "../src/lib/os_windows";
+      when others =>
+         OS_Sources := "../src/lib/os_unix";
+   end case;
+  
+   package Compiler is
+      for Default_Switches ("Ada") use list_crates_config.Ada_Compiler_Switches & "-gnatX0";
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Install is
+      for Artifacts (".") use (Build_Root & "/share");
+   end Install;
+
+end list_crates;

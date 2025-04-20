@@ -1,0 +1,19 @@
+--  --------------------------------------------------------------------------------------
+--  SPDX-License-Identifier: Apache-2.0
+--  SPDX-Creator: William J. Franck (william.franck@sterna.dev)
+--  SPDX-FileCopyrightText: Copyright 2025 STERNA MARINE s.a.s. (william.franck@sterna.dev)
+--  --------------------------------------------------------------------------------------
+--  Initial creation date : 2025-03-01
+--  -------------------------------------------------------------
+
+aggregate project list_crates is
+
+   for Project_Path use (
+         "bld");
+   for Project_Files use (
+         "bld/list_crates-lib.gpr",
+         "bld/list_crates-tests.gpr",
+         "bld/list_crates-main.gpr");
+      -- "bld/list_crates-examples.gpr",
+  
+end list_crates;

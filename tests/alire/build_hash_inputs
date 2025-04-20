@@ -1,0 +1,7 @@
+config:list_crates_tests.trace_level=Info
+dependency:adafdevttestunit=3.9.0=cc69b63acbedba2bdd5265dea964ec6cec6d33ed7b461676bdcc612851fead73
+dependency:list_crates=0.1.0-dev=da17b14bfa95baf119553c9fc2189d05bb49c3087c409d0139e53037bf8002ef
+external:LIBRARY_TYPE=default
+external:LIST_CRATES_TESTS_LIBRARY_TYPE=default
+profile:list_crates_tests=DEVELOPMENT
+switches:list_crates_tests=-Og,-fdata-sections,-ffunction-sections,-g,-gnat2022,-gnatVa,-gnatW8,-gnata,-gnato,-gnatw.X,-gnatwI,-gnatwa,-gnaty-d,-gnaty-l,-gnaty-t,-gnatyB,-gnatyC,-gnatyI,-gnatyM132,-gnatyO,-gnatyS,-gnatye,-gnatyf,-gnatyx
